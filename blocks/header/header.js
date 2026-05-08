@@ -1,6 +1,12 @@
 import { fetchPlaceholders, getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
+function getSitePrefix() {
+  const { pathname } = window.location;
+  const segments = pathname.split('/').filter(Boolean);
+  return segments.length > 1 ? `/${segments[0]}` : '';
+}
+
 // media query match that indicates mobile/tablet width
 const isDesktop = window.matchMedia('(min-width: 900px)');
 
@@ -175,7 +181,8 @@ async function buildBreadcrumbs() {
 export default async function decorate(block) {
   // load nav as fragment
   const navMeta = getMetadata('nav');
-  const navPath = navMeta ? new URL(navMeta, window.location).pathname : '/nav';
+  const prefix = getSitePrefix();
+  const navPath = navMeta ? new URL(navMeta, window.location).pathname : `${prefix}/nav`;
   const fragment = await loadFragment(navPath);
 
   // decorate nav DOM

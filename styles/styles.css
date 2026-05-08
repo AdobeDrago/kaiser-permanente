@@ -18,8 +18,10 @@
   --link-hover-color: #005a87;
 
   /* fonts */
-  --body-font-family: 'Inter', inter-fallback, sans-serif;
-  --heading-font-family: 'Inter', inter-fallback, sans-serif;
+  --body-font-family: 'Gotham 4r', gotham-fallback, sans-serif;
+  --heading-font-family: 'Gotham 5r', gotham-fallback, sans-serif;
+  --font-family-light: 'Gotham 3r', gotham-fallback, sans-serif;
+  --font-family-bold: 'Gotham 7r', gotham-fallback, sans-serif;
 
   /* body sizes */
   --body-font-size-m: 16px;
@@ -60,8 +62,8 @@
 
 /* fallback fonts */
 @font-face {
-  font-family: inter-fallback;
-  size-adjust: 107%;
+  font-family: gotham-fallback;
+  size-adjust: 100%;
   src: local('Arial');
 }
 
@@ -115,7 +117,7 @@ h6 {
   margin-top: 0.8em;
   margin-bottom: 0.25em;
   font-family: var(--heading-font-family);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.25;
   letter-spacing: -0.02em;
   color: var(--text-color);
@@ -191,7 +193,7 @@ button {
   border: 1px solid var(--color-blue-accent);
   border-radius: var(--button-border-radius);
   padding: var(--button-padding);
-  font-family: var(--body-font-family);
+  font-family: var(--heading-font-family);
   font-style: normal;
   font-weight: 500;
   font-size: var(--button-font-size);
