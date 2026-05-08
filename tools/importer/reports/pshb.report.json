@@ -1,0 +1,20 @@
+{
+  "status": "success",
+  "url": "https://choose.kaiserpermanente.org/pshb/",
+  "path": "pshb",
+  "timestamp": "2026-05-08T22:56:06.900Z",
+  "title": "pshb Home",
+  "template": "pshb-landing",
+  "blocks": [
+    "hero-landing",
+    "hero-landing",
+    "columns-contact",
+    "columns-media",
+    "tabs-feature",
+    "columns-promo",
+    "columns-promo",
+    "columns-promo",
+    "cards-icon",
+    "cards-feature"
+  ]
+}

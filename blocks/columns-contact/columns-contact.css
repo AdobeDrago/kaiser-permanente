@@ -1,0 +1,35 @@
+.columns-contact > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+}
+
+.columns-contact > div > div {
+  flex: 1;
+}
+
+.columns-contact h3 {
+  font-size: var(--heading-font-size-xs);
+  font-weight: 600;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+  color: var(--text-color);
+}
+
+.columns-contact p {
+  font-size: var(--body-font-size-m);
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+.columns-contact a:any-link {
+  color: var(--link-color);
+  font-weight: 500;
+}
+
+@media (width >= 900px) {
+  .columns-contact > div {
+    flex-direction: row;
+    gap: var(--spacing-l);
+  }
+}

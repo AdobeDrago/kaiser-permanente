@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-icon",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-05-08T22:34:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://choose.kaiserpermanente.org/pshb/",
+    "originPage": "PSHB landing page",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "compact",
+    "purpose": "icon-links",
+    "imagePattern": "icon"
+  },
+  "contentPattern": {
+    "structure": "icon + label + link",
+    "buttonCount": 3,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "icon-based navigation cards",
+      "service category links with icons",
+      "quick-link sections with visual indicators"
+    ],
+    "notSuitableFor": [
+      "image-heavy feature cards",
+      "cards with long descriptions",
+      "product listing cards"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/pshb/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-08T22:34:00.000Z"
+  }
+}

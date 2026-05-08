@@ -1,0 +1,39 @@
+{
+  "variantName": "columns-media",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-05-08T22:34:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://choose.kaiserpermanente.org/pshb/",
+    "originPage": "PSHB landing page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "media-content",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "video/embed + heading + description",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "video with description layouts",
+      "embedded media with adjacent text",
+      "multimedia content sections"
+    ],
+    "notSuitableFor": [
+      "text-only columns",
+      "image galleries",
+      "contact information layouts"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/pshb/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-08T22:34:00.000Z"
+  }
+}

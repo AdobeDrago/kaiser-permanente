@@ -1,0 +1,51 @@
+.cards-icon > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--spacing-l);
+}
+
+.cards-icon > ul > li {
+  text-align: center;
+  flex: 0 0 auto;
+  width: 140px;
+}
+
+.cards-icon .cards-icon-card-image {
+  line-height: 0;
+  margin-bottom: var(--spacing-s);
+}
+
+.cards-icon .cards-icon-card-image img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  background-color: rgb(255 255 255 / 10%);
+  padding: 8px;
+}
+
+.cards-icon .cards-icon-card-body {
+  margin: 0;
+}
+
+.cards-icon .cards-icon-card-body strong {
+  display: block;
+  margin-bottom: 4px;
+  font-size: var(--body-font-size-m);
+  color: inherit;
+}
+
+.cards-icon .cards-icon-card-body a:any-link {
+  font-size: var(--body-font-size-s);
+  color: inherit;
+  text-decoration: underline;
+}
+
+.section.dark-blue .cards-icon .cards-icon-card-body strong,
+.section.dark-blue .cards-icon .cards-icon-card-body a:any-link {
+  color: var(--color-white);
+}

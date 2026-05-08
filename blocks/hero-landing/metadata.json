@@ -1,0 +1,39 @@
+{
+  "variantName": "hero-landing",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-05-08T22:34:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://choose.kaiserpermanente.org/pshb/",
+    "originPage": "PSHB landing page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "minimal",
+    "purpose": "landing-hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + description + CTA",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "landing page hero banners",
+      "campaign pages with background images",
+      "full-width promotional banners"
+    ],
+    "notSuitableFor": [
+      "text-only hero sections",
+      "hero with multiple columns",
+      "hero without background imagery"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/pshb/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-08T22:34:00.000Z"
+  }
+}

@@ -1,0 +1,134 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "pshb-landing",
+      "urls": [
+        "https://choose.kaiserpermanente.org/pshb/"
+      ],
+      "description": "Plan Shop and Buy landing page - starter site template for multi-site management",
+      "blocks": [
+        {
+          "name": "hero-landing",
+          "instances": ["#promo--435069566", ".concierge-component"]
+        },
+        {
+          "name": "columns-contact",
+          "instances": [".plans-support-component"]
+        },
+        {
+          "name": "columns-media",
+          "instances": [".video-component"]
+        },
+        {
+          "name": "tabs-feature",
+          "instances": [".tabbed-content.panelcontainer"]
+        },
+        {
+          "name": "columns-promo",
+          "instances": ["#promo-2016534242", ".responsivegrid.two-col.aem-GridColumn--default--12:has(.gs-image-core)", ".wellness-rewards"]
+        },
+        {
+          "name": "cards-icon",
+          "instances": [".banner-component"]
+        },
+        {
+          "name": "cards-feature",
+          "instances": [".card-pattern-component"]
+        }
+      ],
+      "sections": [
+        {
+          "id": "section-1",
+          "name": "Hero",
+          "selector": "#promo--435069566",
+          "style": null,
+          "blocks": ["hero-landing"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-2",
+          "name": "Plan Support",
+          "selector": ".container-content.pale-blue",
+          "style": "pale-blue",
+          "blocks": ["columns-contact"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-3",
+          "name": "Video",
+          "selector": ".video-component",
+          "style": null,
+          "blocks": ["columns-media"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-4",
+          "name": "Why Kaiser Permanente - Tabs",
+          "selector": ".tabbed-content.panelcontainer",
+          "style": null,
+          "blocks": ["tabs-feature"],
+          "defaultContent": ["#text-d28e84b210"]
+        },
+        {
+          "id": "section-5",
+          "name": "Explore Health Topics",
+          "selector": "#promo-2016534242",
+          "style": null,
+          "blocks": ["columns-promo"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-6",
+          "name": "Care and Coverage",
+          "selector": ["#text-45604a82ca", ".responsivegrid.two-col.aem-GridColumn--default--12:has(.gs-image-core)"],
+          "style": null,
+          "blocks": ["columns-promo"],
+          "defaultContent": ["#text-45604a82ca"]
+        },
+        {
+          "id": "section-7",
+          "name": "Care for Growing Families",
+          "selector": ".concierge-component",
+          "style": null,
+          "blocks": ["hero-landing"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-8",
+          "name": "Get Informed Stay Connected",
+          "selector": ".wellness-rewards",
+          "style": null,
+          "blocks": ["columns-promo"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-9",
+          "name": "Experience Kaiser Permanente",
+          "selector": ".banner-component",
+          "style": "dark-blue",
+          "blocks": ["cards-icon"],
+          "defaultContent": []
+        },
+        {
+          "id": "section-10",
+          "name": "Specialty Care Cards",
+          "selector": ".card-pattern-component",
+          "style": null,
+          "blocks": ["cards-feature"],
+          "defaultContent": ["#feature-card-component-heading"]
+        },
+        {
+          "id": "section-11",
+          "name": "Footnotes",
+          "selector": ".footnotes-component",
+          "style": null,
+          "blocks": [],
+          "defaultContent": [".footnotes-component"]
+        }
+      ]
+    }
+  ]
+}
