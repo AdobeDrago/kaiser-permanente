@@ -1,5 +1,11 @@
 export default function decorate(block) {
-  if (!block.querySelector(':scope > div:first-child picture')) {
+  const imageRow = block.querySelector(':scope > div:first-child');
+  if (!imageRow?.querySelector('picture')) {
     block.classList.add('no-image');
+  }
+
+  const contentCol = block.querySelector(':scope > div:last-child > div');
+  if (contentCol) {
+    contentCol.classList.add('hero-landing-card');
   }
 }

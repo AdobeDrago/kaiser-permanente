@@ -45,7 +45,7 @@
   --spacing-xxl: 80px;
 
   /* layout */
-  --content-max-width: 1200px;
+  --content-max-width: 1440px;
   --section-padding: 40px 0;
 
   /* buttons */
@@ -288,6 +288,20 @@ main > .section:first-of-type {
   main > .section > div {
     padding: 0 32px;
   }
+}
+
+/* DA style class: break out of the content column so the section spans the full width */
+main > .section.full-width {
+  width: 100%;
+  max-width: none;
+}
+
+main > .section.full-width > div {
+  box-sizing: border-box;
+  max-width: none;
+  width: 100%;
+  margin-inline: 0;
+  padding-inline: 0;
 }
 
 /* section variants */
