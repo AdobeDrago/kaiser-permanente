@@ -3,7 +3,7 @@
   gap: 0;
   max-width: 100%;
   overflow-x: auto;
-  border-bottom: 2px solid #dde3e8;
+  border-bottom: 1px solid #dde3e8;
   margin-bottom: var(--spacing-m);
 }
 
@@ -11,7 +11,7 @@
   flex: 0 0 max-content;
   margin: 0;
   border: none;
-  border-bottom: 3px solid transparent;
+  border-bottom: 5px solid transparent;
   border-radius: 0;
   padding: 15px 20px;
   background-color: transparent;
@@ -32,6 +32,7 @@
 .tabs-feature .tabs-feature-list button:hover {
   color: var(--text-color);
   background-color: transparent;
+  text-decoration: none;
 }
 
 .tabs-feature .tabs-feature-list button[aria-selected='true'] {
@@ -42,10 +43,10 @@
 }
 
 .tabs-feature .tabs-feature-panel {
-  padding: var(--spacing-m) 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-m);
+  gap: 0;
 }
 
 .tabs-feature .tabs-feature-panel[aria-hidden='true'] {
@@ -55,7 +56,12 @@
 .tabs-feature .tabs-feature-panel > div {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-m);
+  gap: 0;
+}
+
+.tabs-feature .tabs-feature-panel > div > div:first-child {
+  background-color: #f0f7fa;
+  padding: var(--spacing-l);
 }
 
 .tabs-feature .tabs-feature-panel h3 {
@@ -69,25 +75,41 @@
   line-height: 1.6;
 }
 
+.tabs-feature .tabs-feature-image-col {
+  display: flex;
+  flex: 1;
+}
+
+.tabs-feature .tabs-feature-image-col picture {
+  display: flex;
+  flex: 1;
+}
+
 .tabs-feature .tabs-feature-panel img {
+  display: block;
   width: 100%;
-  height: auto;
-  border-radius: 8px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+  flex: 1;
+  min-height: 200px;
 }
 
 @media (width >= 900px) {
   .tabs-feature .tabs-feature-panel > div {
     flex-direction: row;
-    align-items: center;
-    gap: var(--spacing-l);
+    align-items: stretch;
+    gap: 0;
   }
 
   .tabs-feature .tabs-feature-panel > div > div:first-child {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
   }
 
-  .tabs-feature .tabs-feature-panel > div > div:last-child,
-  .tabs-feature .tabs-feature-panel > div > picture {
+  .tabs-feature .tabs-feature-image-col {
     flex: 1;
   }
 }

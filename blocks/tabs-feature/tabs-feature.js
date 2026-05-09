@@ -46,4 +46,25 @@ export default async function decorate(block) {
   });
 
   block.prepend(tablist);
+
+  // Split text content and image into two sibling columns per panel
+  block.querySelectorAll('.tabs-feature-panel > div').forEach((row) => {
+    const picturePara = [...row.querySelectorAll('p')].reverse().find((p) => p.querySelector('picture'));
+    if (!picturePara) return;
+
+    const picture = picturePara.querySelector('picture');
+    const allChildren = [...row.children];
+
+    const textCol = document.createElement('div');
+    allChildren.forEach((child) => {
+      if (child !== picturePara) textCol.append(child);
+    });
+
+    const imageCol = document.createElement('div');
+    imageCol.classList.add('tabs-feature-image-col');
+    imageCol.append(picture);
+    picturePara.remove();
+
+    row.append(textCol, imageCol);
+  });
 }
