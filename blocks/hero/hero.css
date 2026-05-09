@@ -104,8 +104,8 @@
     position: relative;
     z-index: 1;
     flex: 0 1 auto;
-    width: min(50%, 520px);
-    max-width: 520px;
+    width: min(50%, 626px);
+    max-width: 626px;
     margin: var(--spacing-xl) 0 var(--spacing-xl) 5%;
     padding: 40px;
     background-color: var(--color-white);

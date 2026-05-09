@@ -1,17 +1,42 @@
 export default function decorate(block) {
-  const cell = block.querySelector(':scope > div > div');
-  if (!cell) return;
+  const rows = [...block.querySelectorAll(':scope > div')];
 
-  const picture = cell.querySelector(':scope > picture');
+  // Support both single-row (picture + content in same cell) and
+  // two-row (row 1 = picture, row 2 = content) document structures.
+  let picture = null;
+  let contentCell = null;
+
+  if (rows.length >= 2) {
+    picture = rows[0].querySelector('picture');
+    contentCell = rows[1].querySelector(':scope > div');
+  } else if (rows.length === 1) {
+    const cell = rows[0].querySelector(':scope > div');
+    picture = cell?.querySelector('picture');
+    contentCell = cell;
+  }
+
   if (!picture) {
     block.classList.add('no-image');
   }
 
-  const contentNodes = [...cell.children].filter((el) => el !== picture);
-  if (contentNodes.length === 0) return;
+  // Rebuild block as a single row containing picture + card
+  const inner = document.createElement('div');
+  const outer = document.createElement('div');
 
-  const card = document.createElement('div');
-  card.className = 'hero-card';
-  contentNodes.forEach((el) => card.append(el));
-  cell.append(card);
+  if (picture) {
+    inner.append(picture);
+  }
+
+  if (contentCell) {
+    const card = document.createElement('div');
+    card.className = 'hero-card';
+    [...contentCell.children].forEach((el) => {
+      if (el !== picture) card.append(el);
+    });
+    inner.append(card);
+  }
+
+  outer.append(inner);
+  block.innerHTML = '';
+  block.append(outer);
 }
