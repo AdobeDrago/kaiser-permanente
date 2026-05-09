@@ -386,6 +386,30 @@ hr {
   margin: var(--spacing-l) 0;
 }
 
+main .section.border-top > .default-content-wrapper {
+  border-top: 6px solid #c4cdd6;
+  padding: 0 1rem;
+}
+
+@media (width >= 900px) {
+  main .section.border-top > .default-content-wrapper {
+    padding: 0;
+  }
+}
+
+main .section.border-top p {
+  font-size: var(--body-font-size-s);
+  color: var(--color-grey-text);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+main .section.border-top p:first-child {
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: var(--spacing-xs);
+}
+
 /* section metadata (hidden) */
 main .section-metadata {
   display: none;
