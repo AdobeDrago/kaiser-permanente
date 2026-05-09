@@ -53,6 +53,7 @@
   --button-padding: 12px 24px;
   --button-font-size: 16px;
   --button-transition: background-color 0.2s ease, border-color 0.2s ease;
+  --color-button-primary: #3d6fa8;
 
   /* nav heights */
   --nav-height: 64px;
@@ -235,7 +236,7 @@ button:disabled:hover {
 
 a.button.secondary,
 button.secondary {
-  background-color: var(--color-white);
+  background-color: var(--color-pale-blue);
   border: 2px solid var(--color-blue-accent);
   color: var(--color-navy);
 }
@@ -248,6 +249,43 @@ button.secondary:focus {
   border-color: var(--color-blue-accent);
   color: var(--color-white);
   text-decoration: underline;
+}
+
+a.button.primary,
+button.primary {
+  background-color: var(--color-button-primary);
+  border-color: var(--color-button-primary);
+  color: var(--color-white);
+}
+
+a.button.primary:hover,
+a.button.primary:focus,
+button.primary:hover,
+button.primary:focus {
+  background-color: var(--color-blue);
+  border-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+a.button:not(.primary):not(.secondary):any-link {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background-color: transparent;
+  color: var(--link-color);
+  font-size: inherit;
+  font-weight: inherit;
+  white-space: normal;
+  text-decoration: underline;
+}
+
+a.button:not(.primary):not(.secondary):hover,
+a.button:not(.primary):not(.secondary):focus {
+  background-color: transparent;
+  color: var(--link-hover-color);
+  border-color: transparent;
 }
 
 main img {

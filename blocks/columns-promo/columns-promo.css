@@ -48,9 +48,6 @@
   margin-bottom: 0.5em;
 }
 
-.columns-promo a:any-link {
-  color: var(--link-color);
-}
 
 .columns-promo a.button:any-link {
   margin-top: var(--spacing-s);
