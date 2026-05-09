@@ -102,6 +102,13 @@ header {
   --header-height: 140px;
 }
 
+@media (width < 900px) {
+  header {
+    height: auto;
+    --header-height: 72px;
+  }
+}
+
 header .header,
 footer .footer {
   visibility: hidden;

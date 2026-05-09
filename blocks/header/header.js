@@ -80,10 +80,13 @@ function toggleAllNavSections(sections, expanded = false) {
 function toggleMenu(nav, navSections, forceExpanded = null) {
   const expanded = forceExpanded !== null ? !forceExpanded : nav.getAttribute('aria-expanded') === 'true';
   const button = nav.querySelector('.nav-hamburger button');
+  const hamburgerLabel = nav.querySelector('.nav-hamburger-label');
   document.body.style.overflowY = (expanded || isDesktop.matches) ? '' : 'hidden';
   nav.setAttribute('aria-expanded', expanded ? 'false' : 'true');
   toggleAllNavSections(navSections, expanded || isDesktop.matches ? 'false' : 'true');
   button.setAttribute('aria-label', expanded ? 'Open navigation' : 'Close navigation');
+  const menuOpen = nav.getAttribute('aria-expanded') === 'true';
+  if (hamburgerLabel) hamburgerLabel.textContent = isDesktop.matches ? 'Menu' : (menuOpen ? 'Close' : 'Menu');
   // enable nav dropdown keyboard accessibility
   const navDrops = navSections.querySelectorAll('.nav-drop');
   if (isDesktop.matches) {
@@ -239,14 +242,20 @@ export default async function decorate(block) {
     }
   }
 
-  // hamburger for mobile
+  // hamburger for mobile — placed in nav-sections row (right of Sign In) for layout
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');
   hamburger.innerHTML = `<button type="button" aria-controls="nav" aria-label="Open navigation">
       <span class="nav-hamburger-icon"></span>
-    </button>`;
+    </button>
+    <span class="nav-hamburger-label" aria-hidden="true">Menu</span>`;
   hamburger.addEventListener('click', () => toggleMenu(nav, navSections));
-  nav.prepend(hamburger);
+  const sectionsInner = navSections?.querySelector('.default-content-wrapper');
+  if (sectionsInner) {
+    sectionsInner.append(hamburger);
+  } else {
+    nav.prepend(hamburger);
+  }
   nav.setAttribute('aria-expanded', 'false');
   // prevent mobile nav behavior on window resize
   toggleMenu(nav, navSections, isDesktop.matches);
