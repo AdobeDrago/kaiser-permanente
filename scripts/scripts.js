@@ -45,6 +45,43 @@ function buildAutoBlocks() {
 }
 
 /**
+ * Drops default-content wrappers that only contain placeholders (e.g. DA stray rows with
+ * broken images like src="about:error"), which otherwise appear beside blocks such as hero-landing.
+ * @param {Element} section
+ */
+function pruneEmptyDefaultContentWrappers(section) {
+  section.querySelectorAll(':scope > .default-content-wrapper').forEach((wrapper) => {
+    wrapper.querySelectorAll('img').forEach((img) => {
+      const src = (img.getAttribute('src') || '').trim();
+      if (!src || src.startsWith('about:')) {
+        const para = img.closest('p');
+        img.remove();
+        if (para && !para.textContent.trim() && !para.querySelector('img, picture')) {
+          para.remove();
+        }
+      }
+    });
+
+    wrapper.querySelectorAll('p').forEach((p) => {
+      if (!p.textContent.trim() && !p.querySelector('img, picture')) {
+        p.remove();
+      }
+    });
+
+    const text = wrapper.textContent.replace(/\u00a0/g, ' ').trim();
+    const hasMedia = wrapper.querySelector('picture, video, iframe');
+    const hasValidImg = [...wrapper.querySelectorAll('img')].some((img) => {
+      const src = (img.getAttribute('src') || '').trim();
+      return src && !src.startsWith('about:');
+    });
+
+    if (!text && !hasMedia && !hasValidImg) {
+      wrapper.remove();
+    }
+  });
+}
+
+/**
  * Decorates all sections in a container element.
  * @param {Element} main The container element
  */
@@ -93,6 +130,8 @@ function decorateSections(main) {
       });
       sectionMeta.parentNode.remove();
     }
+
+    pruneEmptyDefaultContentWrappers(section);
   });
 }
 

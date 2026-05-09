@@ -1,3 +1,7 @@
+.hero-landing-container {
+  padding: 0 !important;
+}
+
 .hero-landing-container .hero-landing-wrapper {
   max-width: unset;
   padding: 0;
@@ -8,19 +12,72 @@
 }
 
 .hero-landing {
+  box-sizing: border-box;
+  width: 100%;
   position: relative;
-  padding: 60px 24px;
-  min-height: 360px;
   display: flex;
-  align-items: center;
-  overflow: hidden;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
 }
 
-.hero-landing > div:last-child {
+/* Background image row */
+.hero-landing > div:first-child {
   position: relative;
-  z-index: 1;
-  max-width: 600px;
-  margin: 0 auto 0 5%;
+  flex: 0 0 auto;
+  width: 100%;
+  min-height: min(56vw, 340px);
+}
+
+.hero-landing.no-image > div:first-child {
+  display: none;
+}
+
+.hero-landing > div:first-child > div {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-landing picture {
+  display: block;
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero-landing img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobile: overlapping card, centered */
+.hero-landing > div:last-child {
+  flex: 0 0 auto;
+  box-sizing: border-box;
+  width: calc(100% - 32px);
+  max-width: 560px;
+  margin: -52px auto var(--spacing-l);
+  position: relative;
+  z-index: 2;
+  padding: 0;
+}
+
+.hero-landing.no-image > div:last-child {
+  margin-top: 0;
+  width: 100%;
+  max-width: none;
+}
+
+.hero-landing-card {
+  background-color: var(--color-white);
+  border-radius: 28px;
+  border: 1px solid #dde3e8;
+  padding: 28px 24px 32px;
+  box-shadow: 0 8px 28px rgba(13, 28, 61, 0.08);
 }
 
 .hero-landing h1,
@@ -30,16 +87,24 @@
   font-weight: 600;
   margin-top: 0;
   margin-bottom: 0.5em;
+  line-height: 1.2;
 }
 
 .hero-landing p {
-  color: var(--color-navy);
-  font-size: 18px;
-  line-height: 1.5;
-  margin-bottom: 1.5em;
+  color: #000;
+  font-size: 16px;
+  line-height: 1.55;
+  margin-top: 0;
+  margin-bottom: 1.25em;
+  font-weight: 700;
+}
+
+.hero-landing p.button-container {
+  margin-bottom: 0;
 }
 
 .hero-landing a.button:any-link {
+  box-sizing: border-box;
   background-color: var(--color-blue-accent);
   color: var(--color-white);
   border: 1px solid transparent;
@@ -51,25 +116,100 @@
   background-color: var(--link-hover-color);
 }
 
-.hero-landing picture {
-  position: absolute;
-  z-index: 0;
-  inset: 0;
-}
-
-.hero-landing img {
-  object-fit: cover;
-  width: 100%;
-  height: 100%;
+@media (width < 900px) {
+  .hero-landing-card a.button:any-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+    white-space: normal;
+  }
 }
 
 @media (width >= 900px) {
   .hero-landing {
-    padding: 80px 32px;
-    min-height: 420px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(440px, min(56vw, 500px));
+    min-height: 0;
+    overflow: hidden;
   }
 
+  .hero-landing > div:first-child {
+    grid-column: 1 / -1;
+    grid-row: 1;
+    min-height: 100%;
+  }
+
+  /* Progressive blur + light frost on the right so the photo stays sharp on the left */
+  .hero-landing > div:first-child > div::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+      to right,
+      transparent 0%,
+      transparent 30%,
+      rgba(255, 255, 255, 0.08) 44%,
+      rgba(255, 255, 255, 0.38) 72%,
+      rgba(255, 255, 255, 0.52) 100%
+    );
+    backdrop-filter: blur(36px) saturate(1.08);
+    -webkit-backdrop-filter: blur(36px) saturate(1.08);
+    mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      transparent 26%,
+      rgb(0 0 0 / 25%) 42%,
+      rgb(0 0 0 / 78%) 58%,
+      black 72%,
+      black 100%
+    );
+    -webkit-mask-image: linear-gradient(
+      to right,
+      transparent 0,
+      transparent 26%,
+      rgb(0 0 0 / 25%) 42%,
+      rgb(0 0 0 / 78%) 58%,
+      black 72%,
+      black 100%
+    );
+  }
+
+  .hero-landing h1,
+  .hero-landing h2 {
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-size: 32px;
+  }
+
+  /* Content sits in the right grid column so it begins at the hero’s horizontal center */
   .hero-landing > div:last-child {
-    max-width: 550px;
+    grid-column: 2;
+    grid-row: 1;
+    align-self: center;
+    justify-self: start;
+    box-sizing: border-box;
+    width: 100%;
+    max-width: min(776px, 42vw);
+    margin: 0 clamp(24px, 5vw, 72px) 0 0;
+    z-index: 2;
+  }
+
+  .hero-landing-card {
+    border: none;
+    border-radius: 28px;
+    padding: 32px;
+    box-shadow:
+      0 20px 56px rgb(13 28 61 / 12%),
+      0 6px 16px rgb(13 28 61 / 8%);
+  }
+
+  .hero-landing-card a.button:any-link {
+    display: inline-block;
+    white-space: nowrap;
+    border-radius: 999px;
+    padding: 14px 36px;
   }
 }
