@@ -12,7 +12,7 @@
 
 .columns-media > div > div:last-child {
   flex: 1;
-  align-self: stretch;
+  align-self: center;
 }
 
 .columns-media h2 {
@@ -45,7 +45,6 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: 12px;
   overflow: hidden;
   background-color: var(--color-navy);
 }

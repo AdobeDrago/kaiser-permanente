@@ -16,7 +16,6 @@ function isKnownEmbedProvider(url) {
   const host = url.hostname.toLowerCase();
   if (host.endsWith('youtube.com') || host === 'youtu.be') return true;
   if (host.endsWith('vimeo.com')) return true;
-  if (host.includes('gumucloud.com')) return true;
   return false;
 }
 
@@ -57,21 +56,6 @@ function toEmbedUrl(url) {
     return new URL(`https://player.vimeo.com/video/${id}`);
   }
 
-  if (host.includes('gumucloud.com')) {
-    let path = url.pathname;
-    if (path.includes('/view/')) {
-      path = path.replace('/view/', '/embed/');
-    }
-    const out = new URL(path, url.origin);
-    url.searchParams.forEach((val, key) => {
-      out.searchParams.set(key, val);
-    });
-    if (out.searchParams.get('autoplay') === 'false') {
-      out.searchParams.delete('autoplay');
-    }
-    return out;
-  }
-
   return url;
 }
 
@@ -85,8 +69,6 @@ function getAutoplayEmbedUrl(href) {
     embed.searchParams.set('autoplay', '1');
   } else if (embed.hostname.includes('vimeo.com')) {
     embed.searchParams.set('autoplay', '1');
-  } else if (embed.hostname.includes('gumucloud.com')) {
-    embed.searchParams.set('autoplay', 'true');
   } else {
     embed.searchParams.set('autoplay', '1');
   }
