@@ -4,7 +4,10 @@ import { loadFragment } from '../fragment/fragment.js';
 function getSitePrefix() {
   const { pathname } = window.location;
   const segments = pathname.split('/').filter(Boolean);
-  return segments.length > 1 ? `/${segments[0]}` : '';
+  if (!segments.length) return '';
+  const excludedPrefixes = ['docs', 'tools', 'scripts', 'styles', 'blocks', 'icons'];
+  if (excludedPrefixes.includes(segments[0])) return '';
+  return `/${segments[0]}`;
 }
 
 // media query match that indicates mobile/tablet width

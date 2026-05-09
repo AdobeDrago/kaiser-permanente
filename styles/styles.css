@@ -97,6 +97,8 @@ body.appear {
 
 header {
   height: var(--header-height);
+
+  --header-height: 140px;
 }
 
 header .header,
@@ -267,7 +269,7 @@ button.primary:focus {
   color: var(--color-white);
 }
 
-a.button:not(.primary):not(.secondary):any-link {
+a.button:not(.primary, .secondary):any-link {
   display: inline;
   margin: 0;
   padding: 0;
@@ -281,8 +283,8 @@ a.button:not(.primary):not(.secondary):any-link {
   text-decoration: underline;
 }
 
-a.button:not(.primary):not(.secondary):hover,
-a.button:not(.primary):not(.secondary):focus {
+a.button:not(.primary, .secondary):hover,
+a.button:not(.primary, .secondary):focus {
   background-color: transparent;
   color: var(--link-hover-color);
   border-color: transparent;
