@@ -1,10 +1,12 @@
 .accordion-docs details {
-  border: 1px solid #dadada;
+  border: 1px solid #dde3e8;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
 .accordion-docs details + details {
-  margin-top: 24px;
+  margin-top: var(--spacing-s);
 }
 
 .accordion-docs details p {
@@ -13,21 +15,24 @@
 
 .accordion-docs details summary {
   position: relative;
-  padding: 0 16px;
-  padding-right: 46px;
+  padding: 16px 48px 16px 20px;
   cursor: pointer;
   list-style: none;
-  overflow: auto;
-  transition: background-color 0.2s;
+  font-family: var(--heading-font-family);
+  font-size: var(--body-font-size-m);
+  font-weight: 500;
+  color: var(--color-blue);
+  transition: background-color 0.2s ease;
 }
 
 .accordion-docs details[open] summary {
-  background-color: var(--light-color);
+  background-color: var(--color-pale-blue);
+  border-bottom: 1px solid #dde3e8;
 }
 
 .accordion-docs details summary:focus,
 .accordion-docs details summary:hover {
-  background-color: var(--light-color);
+  background-color: var(--color-pale-blue);
 }
 
 .accordion-docs details summary::-webkit-details-marker {
@@ -38,13 +43,13 @@
   content: '';
   position: absolute;
   top: 50%;
-  right: 18px;
+  right: 20px;
   transform: translateY(-50%) rotate(135deg);
-  width: 6px;
-  height: 6px;
-  border: 2px solid;
+  width: 8px;
+  height: 8px;
+  border: 2px solid var(--color-blue);
   border-width: 2px 2px 0 0;
-  transition: transform 0.2s;
+  transition: transform 0.2s ease;
 }
 
 .accordion-docs details[open] summary::after {
@@ -52,10 +57,16 @@
 }
 
 .accordion-docs details .accordion-docs-item-body {
-  padding: 0 16px;
+  padding: 20px;
 }
 
-.accordion-docs details[open] .accordion-docs-item-body {
-  border-top: 1px solid #dadada;
-  background-color: var(--background-color);
+.accordion-docs details .accordion-docs-item-body a:any-link {
+  display: block;
+  padding: 8px 0;
+  color: var(--link-color);
+  font-size: var(--body-font-size-s);
+}
+
+.accordion-docs details .accordion-docs-item-body a:hover {
+  color: var(--link-hover-color);
 }

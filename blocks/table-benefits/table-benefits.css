@@ -1,67 +1,68 @@
-.table-benefits.block {
+.table-benefits {
   width: 100%;
   overflow-x: auto;
+  margin-bottom: var(--spacing-l);
 }
 
-.table-benefits.block table {
+.table-benefits table {
   width: 100%;
-  max-width: 100%;
   border-collapse: collapse;
-  font-size: var(--body-font-size-xs);
+  font-size: var(--body-font-size-s);
 }
 
-@media (width >= 600px) {
-  .table-benefits.block table {
-    font-size: var(--body-font-size-s);
-  }
-}
-
-@media (width >= 900px) {
-  .table-benefits.block table {
-    font-size: var(--body-font-size-m);
-  }
-}
-
-.table-benefits.block table thead tr {
-  border-top: 2px solid;
-  border-bottom: 2px solid;
-}
-
-.table-benefits.block table tbody tr {
-  border-bottom: 1px solid;
-}
-
-.table-benefits.block table th {
-  font-weight: 700;
-}
-
-.table-benefits.block table th,
-.table-benefits.block table td {
-  padding: 0.5em;
+.table-benefits table caption {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xs);
+  font-weight: 600;
+  color: var(--text-color);
   text-align: left;
+  padding: var(--spacing-s) 0;
+  caption-side: top;
 }
 
-.table-benefits table th p,
-.table-benefits table td p {
+.table-benefits table thead tr {
+  border-bottom: 2px solid var(--color-blue);
+}
+
+.table-benefits table th {
+  font-weight: 600;
+  font-size: var(--body-font-size-m);
+  color: var(--text-color);
+  padding: 14px 8px;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.table-benefits table tbody tr {
+  border-bottom: 1px solid #dde3e8;
+}
+
+.table-benefits table tbody tr:hover {
+  background-color: var(--color-pale-blue);
+}
+
+.table-benefits table td {
+  padding: 10px 8px;
+  font-size: var(--body-font-size-s);
+  color: var(--text-color);
+  vertical-align: top;
+}
+
+.table-benefits table td:first-child {
+  font-weight: 500;
+}
+
+.table-benefits table td p,
+.table-benefits table th p {
   margin: 0;
 }
 
-.table-benefits table td p + p {
-  margin-top: 0.25em;
-}
+@media (width >= 900px) {
+  .table-benefits table {
+    font-size: var(--body-font-size-m);
+  }
 
-/* no header variant */
-.table-benefits.block.no-header table tbody tr {
-  border-top: 1px solid;
-}
-
-/* striped variant */
-.table-benefits.block.striped tbody tr:nth-child(odd) {
-  background-color: var(--overlay-background-color);
-}
-
-/* bordered variant */
-.table-benefits.block.bordered table th,
-.table-benefits.block.bordered table td {
-  border: 1px solid;
+  .table-benefits table td {
+    font-size: var(--body-font-size-m);
+  }
 }
