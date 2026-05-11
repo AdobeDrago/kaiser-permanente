@@ -1,0 +1,13 @@
+{
+  "status": "success",
+  "url": "https://choose.kaiserpermanente.org/pshb/getting-care",
+  "path": "pshb/getting-care",
+  "timestamp": "2026-05-11T18:52:44.436Z",
+  "title": "pshb Getting Care",
+  "template": "pshb-content",
+  "blocks": [
+    "hero-landing",
+    "cards-feature",
+    "cards-feature"
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "url": "https://choose.kaiserpermanente.org/pshb/members-page",
+  "path": "pshb/members-page",
+  "timestamp": "2026-05-11T18:52:50.833Z",
+  "title": "pshb Members Page",
+  "template": "pshb-content",
+  "blocks": [
+    "hero-landing",
+    "columns-promo"
+  ]
+}

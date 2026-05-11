@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-highlight",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-05-11T18:28:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://choose.kaiserpermanente.org/pshb/plans",
+    "originPage": "PSHB Plans & Benefits page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "highlights",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "heading + description + CTA link",
+    "buttonCount": 1,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "highlight cards with text and Learn More links",
+      "region-specific benefit highlight grids",
+      "text-only cards with heading, description, and CTA"
+    ],
+    "notSuitableFor": [
+      "cards with images",
+      "icon-based card layouts",
+      "plan comparison cards with bullet lists"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/pshb/plans"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-11T18:28:00.000Z"
+  }
+}

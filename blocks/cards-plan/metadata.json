@@ -1,0 +1,39 @@
+{
+  "variantName": "cards-plan",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-05-11T18:28:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://choose.kaiserpermanente.org/pshb/plans",
+    "originPage": "PSHB Plans & Benefits page",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "plan-comparison",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "heading + bullet lists x2",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "plan comparison cards without images",
+      "feature comparison grids with bullet lists",
+      "option selection layouts with text-only content"
+    ],
+    "notSuitableFor": [
+      "cards with images",
+      "icon-based card layouts",
+      "cards with CTA buttons"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/pshb/plans"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-11T18:28:00.000Z"
+  }
+}

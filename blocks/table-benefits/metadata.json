@@ -1,0 +1,40 @@
+{
+  "variantName": "table-benefits",
+  "baseBlock": "table",
+  "version": "1.0.0",
+  "created": "2026-05-11T18:28:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://choose.kaiserpermanente.org/pshb/plans",
+    "originPage": "PSHB Plans & Benefits page",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "compact",
+    "purpose": "benefits-rates",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "heading + multi-category comparison tables",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "health plan rate comparison tables",
+      "benefits summary tables with multiple categories",
+      "pricing tables with enrollment codes and rates",
+      "multi-column plan comparison data"
+    ],
+    "notSuitableFor": [
+      "simple single-category tables",
+      "tables with images or media",
+      "non-comparison data tables"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/pshb/plans"],
+    "reuseCount": 1,
+    "lastUsed": "2026-05-11T18:28:00.000Z"
+  }
+}

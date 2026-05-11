@@ -1,0 +1,19 @@
+{
+  "status": "success",
+  "url": "https://choose.kaiserpermanente.org/pshb/plans",
+  "path": "pshb/plans",
+  "timestamp": "2026-05-11T18:52:14.869Z",
+  "title": "pshb Plans & Benefits",
+  "template": "pshb-plans",
+  "blocks": [
+    "hero-landing",
+    "cards-plan",
+    "table-benefits",
+    "accordion-docs",
+    "accordion-docs",
+    "cards-highlight",
+    "columns-promo",
+    "columns-promo",
+    "columns-contact"
+  ]
+}

@@ -129,6 +129,71 @@
           "defaultContent": [".footnotes-component"]
         }
       ]
+    },
+    {
+      "name": "pshb-plans",
+      "urls": [
+        "https://choose.kaiserpermanente.org/pshb/plans",
+        "https://choose.kaiserpermanente.org/pshb/retiree-plans"
+      ],
+      "description": "PSHB plans and benefits comparison pages with plan details, pricing, and enrollment CTAs",
+      "blocks": [
+        {
+          "name": "hero-landing",
+          "instances": [".promo-v2-versionB-main-frame"]
+        },
+        {
+          "name": "cards-plan",
+          "instances": [".plans-summary"]
+        },
+        {
+          "name": "table-benefits",
+          "instances": [".accordion-default"]
+        },
+        {
+          "name": "accordion-docs",
+          "instances": [".accordion-retiree"]
+        },
+        {
+          "name": "cards-highlight",
+          "instances": [".card-pattern-component"]
+        },
+        {
+          "name": "columns-promo",
+          "instances": [".wellness-rewards"]
+        },
+        {
+          "name": "columns-contact",
+          "instances": [".plans-support-component"]
+        }
+      ]
+    },
+    {
+      "name": "pshb-content",
+      "urls": [
+        "https://choose.kaiserpermanente.org/pshb/getting-care",
+        "https://choose.kaiserpermanente.org/pshb/members-page",
+        "https://choose.kaiserpermanente.org/pshb/support"
+      ],
+      "description": "PSHB informational content pages covering care, resources, and support topics",
+      "blocks": [
+        {
+          "name": "hero-landing",
+          "instances": [".promo-v2-versionB-main-frame", ".concierge-component"]
+        },
+        {
+          "name": "cards-feature",
+          "instances": [".card-pattern-component"]
+        },
+        {
+          "name": "columns-promo",
+          "instances": [".promo.aem-GridColumn--default--12:has(.main-frame-promo)", ".wellness-rewards"]
+        },
+        {
+          "name": "columns-contact",
+          "instances": [".plans-support-component"]
+        }
+      ]
     }
   ]
 }
