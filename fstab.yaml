@@ -1,4 +1,4 @@
 mountpoints:
   /:
-    url: https://content.da.live/adobedrago/kaiser-permanente/
+    url: https://content.da.live/adobedrago/kp-pshb/
     type: markup
