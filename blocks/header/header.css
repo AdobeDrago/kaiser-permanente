@@ -158,11 +158,6 @@ header nav .nav-tools a:any-link {
   transition: background-color 0.2s ease;
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
-header nav .nav-tools a:hover {
-  background-color: rgb(255 255 255 / 10%);
-}
-
 /* ── Hamburger (mobile — layout completed in mobile media query) ── */
 header nav .nav-hamburger {
   display: flex;
