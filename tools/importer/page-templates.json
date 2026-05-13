@@ -23,7 +23,7 @@
           "instances": [".video-component"]
         },
         {
-          "name": "tabs-feature",
+          "name": "tabs",
           "instances": [".tabbed-content.panelcontainer"]
         },
         {
@@ -69,7 +69,7 @@
           "name": "Why Kaiser Permanente - Tabs",
           "selector": ".tabbed-content.panelcontainer",
           "style": null,
-          "blocks": ["tabs-feature"],
+          "blocks": ["tabs"],
           "defaultContent": ["#text-d28e84b210"]
         },
         {

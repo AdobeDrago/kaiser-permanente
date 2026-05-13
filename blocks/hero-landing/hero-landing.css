@@ -140,43 +140,6 @@
     min-height: 100%;
   }
 
-  /* Progressive blur + light frost on the right so the photo stays sharp on the left */
-  .hero-landing > div:first-child > div::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-    background: linear-gradient(
-      to right,
-      transparent 0%,
-      transparent 30%,
-      rgba(255, 255, 255, 0.08) 44%,
-      rgba(255, 255, 255, 0.38) 72%,
-      rgba(255, 255, 255, 0.52) 100%
-    );
-    backdrop-filter: blur(36px) saturate(1.08);
-    -webkit-backdrop-filter: blur(36px) saturate(1.08);
-    mask-image: linear-gradient(
-      to right,
-      transparent 0,
-      transparent 26%,
-      rgb(0 0 0 / 25%) 42%,
-      rgb(0 0 0 / 78%) 58%,
-      black 72%,
-      black 100%
-    );
-    -webkit-mask-image: linear-gradient(
-      to right,
-      transparent 0,
-      transparent 26%,
-      rgb(0 0 0 / 25%) 42%,
-      rgb(0 0 0 / 78%) 58%,
-      black 72%,
-      black 100%
-    );
-  }
-
   .hero-landing h1,
   .hero-landing h2 {
     line-height: 1.15;

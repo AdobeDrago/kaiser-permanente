@@ -2,7 +2,7 @@
 /* global WebImporter */
 
 /**
- * Parser for tabs-feature
+ * Parser for tabs
  * Base block: tabs
  * Source: https://choose.kaiserpermanente.org/pshb/
  * Structure: 2 columns - row 1 = block name, subsequent rows = tab label | tab content
@@ -48,6 +48,6 @@ export default function parse(element, { document }) {
     cells.push([tabLabel, contentElements]);
   });
 
-  const block = WebImporter.Blocks.createBlock(document, { name: 'tabs-feature', cells });
+  const block = WebImporter.Blocks.createBlock(document, { name: 'tabs', cells });
   element.replaceWith(block);
 }

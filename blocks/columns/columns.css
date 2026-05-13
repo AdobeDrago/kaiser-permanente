@@ -31,3 +31,10 @@
     order: unset;
   }
 }
+
+/* style variants */
+@media (width >= 900px) {
+  .columns.center-vertically > div {
+    align-items: center;
+  }
+}

@@ -240,7 +240,7 @@ var CustomImportScript = (() => {
     element.replaceWith(block);
   }
 
-  // tools/importer/parsers/tabs-feature.js
+  // tools/importer/parsers/tabs.js
   function parse5(element, { document }) {
     const cells = [];
     const tabLinks = element.querySelectorAll(".tabs__list-item a.tabs__link");
@@ -263,7 +263,7 @@ var CustomImportScript = (() => {
       }
       cells.push([tabLabel, contentElements]);
     });
-    const block = WebImporter.Blocks.createBlock(document, { name: "tabs-feature", cells });
+    const block = WebImporter.Blocks.createBlock(document, { name: "tabs", cells });
     element.replaceWith(block);
   }
 
@@ -400,7 +400,7 @@ var CustomImportScript = (() => {
     "columns-contact": parse2,
     "columns-media": parse3,
     "columns-promo": parse4,
-    "tabs-feature": parse5,
+    "tabs": parse5,
     "cards-icon": parse6,
     "cards-feature": parse7
   };
@@ -424,7 +424,7 @@ var CustomImportScript = (() => {
         instances: [".video-component"]
       },
       {
-        name: "tabs-feature",
+        name: "tabs",
         instances: [".tabbed-content.panelcontainer"]
       },
       {
@@ -470,7 +470,7 @@ var CustomImportScript = (() => {
         name: "Why Kaiser Permanente - Tabs",
         selector: ".tabbed-content.panelcontainer",
         style: null,
-        blocks: ["tabs-feature"],
+        blocks: ["tabs"],
         defaultContent: ["#text-d28e84b210"]
       },
       {

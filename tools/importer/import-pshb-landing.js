@@ -6,7 +6,7 @@ import heroLandingParser from './parsers/hero-landing.js';
 import columnsContactParser from './parsers/columns-contact.js';
 import columnsMediaParser from './parsers/columns-media.js';
 import columnsPromoParser from './parsers/columns-promo.js';
-import tabsFeatureParser from './parsers/tabs-feature.js';
+import tabsFeatureParser from './parsers/tabs.js';
 import cardsIconParser from './parsers/cards-icon.js';
 import cardsFeatureParser from './parsers/cards-feature.js';
 
@@ -20,7 +20,7 @@ const parsers = {
   'columns-contact': columnsContactParser,
   'columns-media': columnsMediaParser,
   'columns-promo': columnsPromoParser,
-  'tabs-feature': tabsFeatureParser,
+  'tabs': tabsFeatureParser,
   'cards-icon': cardsIconParser,
   'cards-feature': cardsFeatureParser,
 };
@@ -46,7 +46,7 @@ const PAGE_TEMPLATE = {
       instances: ['.video-component']
     },
     {
-      name: 'tabs-feature',
+      name: 'tabs',
       instances: ['.tabbed-content.panelcontainer']
     },
     {
@@ -92,7 +92,7 @@ const PAGE_TEMPLATE = {
       name: 'Why Kaiser Permanente - Tabs',
       selector: '.tabbed-content.panelcontainer',
       style: null,
-      blocks: ['tabs-feature'],
+      blocks: ['tabs'],
       defaultContent: ['#text-d28e84b210']
     },
     {

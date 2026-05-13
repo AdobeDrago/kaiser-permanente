@@ -396,31 +396,32 @@ hr {
   margin: var(--spacing-l) 0;
 }
 
-main .section.border-top > .default-content-wrapper {
+/* footnotes */
+main .section.footnotes {
+  margin: 0 1rem;
+}
+
+main .section.footnotes > .default-content-wrapper {
+  /* margin: 0 1rem; */
   border-top: 6px solid #c4cdd6;
   padding: 0 1rem;
 }
 
 @media (width >= 900px) {
-  main .section.border-top > .default-content-wrapper {
+  main .section.footnotes > .default-content-wrapper {
     padding: 0;
   }
 }
 
-main .section.border-top p {
+main .section.footnotes p {
   font-size: var(--body-font-size-s);
   color: var(--color-grey-text);
   line-height: 1.6;
   margin-bottom: 0;
 }
 
-main .section.border-top p:first-child {
+main .section.footnotes p:first-child {
   font-weight: 700;
   color: var(--color-navy);
   margin-bottom: var(--spacing-xs);
-}
-
-/* section metadata (hidden) */
-main .section-metadata {
-  display: none;
 }
