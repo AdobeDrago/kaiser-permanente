@@ -32,6 +32,22 @@
   }
 }
 
+/* Inline wrapping button group */
+.columns-buttons-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.8em;
+}
+
+.columns-buttons-wrap .button-container {
+  margin: 0;
+}
+
+.columns-buttons-wrap .button-container a.button {
+  margin: 0;
+}
+
 /* style variants */
 @media (width >= 900px) {
   .columns.center-vertically > div {

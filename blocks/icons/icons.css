@@ -1,0 +1,101 @@
+.icons-container .icons {
+  margin: 1.5rem 0;
+}
+
+/* Icons block — shared */
+.icons-items {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.icons-item {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--spacing-m);
+}
+
+/* Circular icon container */
+.icons-icon {
+  width: 72px;
+  height: 72px;
+}
+
+.icons-icon picture {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icons-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.icons-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.icons-text p {
+  margin: 0;
+  line-height: 1.6;
+  color: var(--text-color);
+}
+
+.icons-text p + p {
+  margin-top: 0.4em;
+}
+
+.icons-text a:any-link {
+  color: var(--link-color);
+}
+
+/* ─── Grid variant ───────────────────────────────────── */
+.icons.grid .icons-items {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-l);
+}
+
+.icons.grid .icons-item {
+  align-items: center;
+}
+
+@media (width >= 900px) {
+  .icons.grid .icons-items {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-l) var(--spacing-xxl);
+  }
+}
+
+/* ─── List variant ───────────────────────────────────── */
+.icons.list .icons-items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+}
+
+.icons.list .icons-item {
+  align-items: flex-start;
+}
+
+.icons.list .icons-title {
+  font-family: var(--heading-font-family);
+  font-weight: 700;
+  font-size: var(--body-font-size-m);
+  color: var(--color-navy);
+  margin: 0 0 4px !important;
+  line-height: 1.3;
+}
+
+.icons.list .icons-text p {
+  color: var(--text-color);
+}
+
+/* Align icon circle to the title baseline on list variant */
+.icons.list .icons-icon {
+  margin-top: 2px;
+}
