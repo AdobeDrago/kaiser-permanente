@@ -297,6 +297,22 @@ a.button:not(.primary, .secondary):focus {
   border-color: transparent;
 }
 
+/* lists */
+ul, ol {
+  padding-left: 1.5em;
+}
+
+li {
+  margin-bottom: 0.4em;
+}
+
+/* hr */
+hr {
+  border: none;
+  border-top: 1px solid #dde3e8;
+  margin: var(--spacing-l) 0;
+}
+
 main img {
   max-width: 100%;
   width: auto;
@@ -329,6 +345,10 @@ main > .section > div {
 main > .section:first-of-type {
   margin-top: 0;
   padding-top: 0;
+}
+
+main > .section > .table-wrapper + .table-wrapper {
+  margin-top: var(--spacing-l);
 }
 
 @media (width >= 900px) {
@@ -379,21 +399,38 @@ main .section.highlight {
   padding: var(--spacing-l) 0;
 }
 
-/* lists */
-ul, ol {
-  padding-left: 1.5em;
+/* table-grid: renders multiple table blocks side by side */
+@media (width >= 900px) {
+  main > .section.table-grid {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: var(--spacing-l);
+    row-gap: var(--spacing-l);
+    max-width: var(--content-max-width);
+    margin-inline: auto;
+    box-sizing: border-box;
+  }
+
+  main > .section.table-grid > div {
+    max-width: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  main > .section.table-grid > .table-wrapper {
+    flex: 1;
+    min-width: 0;
+  }
+
+  main > .section.table-grid > :not(.table-wrapper) {
+    flex: 0 0 100%;
+  }
+
+  main > .section.table-grid > .table-wrapper {
+    margin-top: 0;
+  }
 }
 
-li {
-  margin-bottom: 0.4em;
-}
-
-/* hr */
-hr {
-  border: none;
-  border-top: 1px solid #dde3e8;
-  margin: var(--spacing-l) 0;
-}
 
 /* footnotes */
 main .section.footnotes {

@@ -1,0 +1,80 @@
+.plan-compare-container .plan-compare-wrapper {
+  margin-top: 3rem;
+}
+
+/* ── Mobile first: single column ── */
+.plan-compare {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.plan-compare-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.plan-compare-col-heading {
+  text-align: center;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-l);
+  font-weight: 700;
+  color: var(--color-navy);
+  margin: 0 0 4px;
+}
+
+.plan-compare-card {
+  background: var(--background-color, #fff);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 8%);
+}
+
+.plan-compare-card strong,
+.plan-compare-card b {
+  display: block;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-s);
+  font-weight: 700;
+  color: var(--color-navy);
+  margin-bottom: 12px;
+}
+
+.plan-compare-card ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.plan-compare-card li {
+  font-size: var(--body-font-size-m);
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 6px;
+}
+
+.plan-compare-card li:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Desktop: 3 columns with equal card heights per row via subgrid ── */
+@media (width >= 900px) {
+  .plan-compare {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+    column-gap: 24px;
+    row-gap: 0;
+  }
+
+  .plan-compare-col {
+    grid-row: 1 / -1;
+    display: grid;
+    grid-template-rows: subgrid;
+    gap: 16px;
+  }
+
+  .plan-compare-card {
+    align-self: stretch;
+  }
+}
